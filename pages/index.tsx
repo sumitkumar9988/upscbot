@@ -6,6 +6,7 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import LoadingDots from '@/components/ui/LoadingDots';
 import { Document } from 'langchain/document';
+import * as gtag from '../lib/gtag';
 import {
   Accordion,
   AccordionContent,
@@ -65,6 +66,13 @@ export default function Home() {
         },
       ],
     }));
+
+    gtag.event({
+      action: 'ask_question',
+      category: 'Chat',
+      label: question,
+      value: question.length,
+    });
 
     setLoading(true);
     setQuery('');
