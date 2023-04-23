@@ -15,6 +15,13 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://owdctnadxcocraiszcyp.supabase.co';
+const supabaseKey =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im93ZGN0bmFkeGNvY3JhaXN6Y3lwIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE1NDk5NTUsImV4cCI6MTk5NzEyNTk1NX0.TPYuycPPK5K592i4znnYbg6pqFzUOCe2x6unLUZfGd8';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 export default function Home() {
   const [query, setQuery] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -88,6 +95,7 @@ export default function Home() {
       };
 
       console.log('body', body);
+
       const response = await fetch('https://prep.shootup.tech/api/chat', {
         method: 'POST',
         headers: {
@@ -99,6 +107,9 @@ export default function Home() {
         }),
       });
       const data = await response.json();
+      await supabase
+        .from('prompt')
+        .insert([{ prompt: question, history: history }]);
 
       console.log('response', response);
       console.log('data', data);
