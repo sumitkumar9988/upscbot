@@ -88,19 +88,16 @@ export default function Home() {
       };
 
       console.log('body', body);
-      const response = await fetch(
-        'http://upscbot.us-east-1.elasticbeanstalk.com/api/chat',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            question: question,
-            history: [],
-          }),
+      const response = await fetch('https://prep.shootup.tech', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-      );
+        body: JSON.stringify({
+          question: question,
+          history: [],
+        }),
+      });
       const data = await response.json();
 
       console.log('response', response);
