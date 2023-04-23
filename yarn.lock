@@ -132,6 +132,13 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@lightspeed/react-mixpanel-script@^0.4.13":
+  "integrity" "sha512-P/muVNzwcCDYHagpSuKLJe/U3VJB2Dnqx86WeBH1Uo+tgX0uSLd+PedshWzJAML8WUx0Oc2ZtXHyT9XPOlVkbQ=="
+  "resolved" "https://registry.npmjs.org/@lightspeed/react-mixpanel-script/-/react-mixpanel-script-0.4.13.tgz"
+  "version" "0.4.13"
+  dependencies:
+    "@types/mixpanel" "^2.14.1"
+
 "@microsoft/fetch-event-source@^2.0.1":
   "integrity" "sha512-W6CLUJ2eBMw3Rec70qrsEW0jOm/3twwJv21mrmj2yORiaVmVYGS4sSS5yUwvQc1ZlDLYGPnClVWmUUMagKNsfA=="
   "resolved" "https://registry.npmjs.org/@microsoft/fetch-event-source/-/fetch-event-source-2.0.1.tgz"
@@ -361,6 +368,11 @@
   "version" "3.0.11"
   dependencies:
     "@types/unist" "*"
+
+"@types/mixpanel@^2.14.1":
+  "integrity" "sha512-VVnwnH+m3043pVnzwq1FNG5KQf/vxWf5abi6F8qq4ph+wQ6i/SNZo+FK34ilH2ii6p07NELCgLMVztqocdqW3A=="
+  "resolved" "https://registry.npmjs.org/@types/mixpanel/-/mixpanel-2.14.4.tgz"
+  "version" "2.14.4"
 
 "@types/ms@*":
   "integrity" "sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA=="

@@ -1,5 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document';
-
+import { MixpanelScript } from '@lightspeed/react-mixpanel-script';
+type MyDocumentProps = {
+  nonce: string;
+};
 export default function Document() {
   return (
     <Html lang="en">
