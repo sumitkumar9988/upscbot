@@ -6,6 +6,7 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import LoadingDots from '@/components/ui/LoadingDots';
 import { Document } from 'langchain/document';
+import axios from 'axios';
 import * as gtag from '../lib/gtag';
 import {
   Accordion,
@@ -79,18 +80,32 @@ export default function Home() {
     console.log('index:trying to ask question', question);
     try {
       // console.log('history', history);
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          question,
-          history,
-        }),
-      });
+      console.log('history', history);
+      console.log('question', question);
+      let body = {
+        question,
+        history,
+      };
 
+      console.log('body', body);
+      const response = await fetch(
+        'http://upscbot.us-east-1.elasticbeanstalk.com/api/chat',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            question: question,
+            history: [],
+          }),
+        },
+      );
       const data = await response.json();
+
+      console.log('response', response);
+      console.log('data', data);
+
       console.log('data', data);
 
       if (data.error) {
