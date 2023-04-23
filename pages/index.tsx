@@ -274,9 +274,6 @@ export default function Home() {
             )}
           </main>
         </div>
-        <footer className="m-auto p-4">
-          Trained with the amazing brains of sumit Ranga & Gourav sanghai.
-        </footer>
       </Layout>
     </>
   );
