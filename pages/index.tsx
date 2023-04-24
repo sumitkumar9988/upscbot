@@ -35,7 +35,7 @@ export default function Home() {
     messages: [
       {
         message:
-          "I am an expert on the book called 'INDIAN POLITY' by M. Laxmikant. You may ask anything from it",
+          "I am an expert on the book called 'INDIAN POLITY' by M. Laxmikant and A Brief History of Modern India (Spectrum) by Rajiv Ahir. You may ask anything from it",
         type: 'apiMessage',
       },
     ],
@@ -164,7 +164,7 @@ export default function Home() {
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Chat With UPSE Expert Bot
+            Chat With UPSC Expert Bot
           </h1>
           <main className={styles.main}>
             <div className={styles.cloud}>
