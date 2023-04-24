@@ -95,7 +95,7 @@ export default function Home() {
       };
 
       console.log('body', body);
-
+      //
       const response = await fetch('https://prep.shootup.tech/api/chat', {
         method: 'POST',
         headers: {
@@ -103,7 +103,7 @@ export default function Home() {
         },
         body: JSON.stringify({
           question: question,
-          history: [],
+          history: history,
         }),
       });
       const data = await response.json();
@@ -164,8 +164,34 @@ export default function Home() {
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Chat With UPSC Expert Bot
+            Talk with UPSC chatbot in Hindi and English Language
           </h1>
+          <div>
+            <div className="text-base font-black underline pb-4">
+              Starting Example Prompt:-
+            </div>
+            <ul className="flex flex-col gap-2 list-inside list-disc">
+              <li className="text-sm font-normal ">hello</li>
+              <li className="text-sm font-normal ">
+                aap kya kya kar sakte ho ?
+              </li>
+              <li className="text-sm font-normal ">
+                How can I use the expert AI bot to help me prepare for a
+                political science exam?
+              </li>
+              <li className="text-sm font-normal ">
+                What are some key topics covered in Indian Polity by M.
+                Laxmikant?
+              </li>
+              <li className="text-sm font-normal ">
+                Tell me about this topics in brief - Fundamental Rights ?
+              </li>
+              <li className="text-sm font-normal ">
+                Ask me any question about topic or on book
+              </li>
+            </ul>
+          </div>
+
           <main className={styles.main}>
             <div className={styles.cloud}>
               <div ref={messageListRef} className={styles.messagelist}>
