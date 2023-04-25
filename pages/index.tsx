@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import Layout from '@/components/layout';
+import { motion } from 'framer-motion';
 import styles from '@/styles/Home.module.css';
 import { Message } from '@/types/chat';
 import Image from 'next/image';
@@ -163,6 +164,26 @@ export default function Home() {
     <>
       <Layout>
         <div className="mx-auto flex flex-col gap-4">
+          <div>
+            <motion.div className=" border-black cursor-pointer  rounded-md p-2">
+              <motion.p
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 1 }}
+                transition={{
+                  ease: 'linear',
+                  duration: 2,
+                  repeat: Infinity,
+                }}
+                animate={{ opacity: 1, scale: 1.2 }}
+                className="text-green-700 font-bold text-center"
+              >
+                <a href="https://wa.link/ym5hkk" target="_blank">
+                  Get Directly Access of Telegram and Whatsapp Bot
+                </a>
+              </motion.p>
+            </motion.div>
+          </div>
           <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
             Talk with UPSC chatbot in Hindi and English Language
           </h1>
@@ -316,6 +337,7 @@ export default function Home() {
                 </form>
               </div>
             </div>
+
             {error && (
               <div className="border border-red-400 rounded-md p-4">
                 <p className="text-red-500">{error}</p>
